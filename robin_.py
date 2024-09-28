@@ -35,7 +35,7 @@ def ROBIN(X,K,m,mp):
     filtered_LOF2=Sorted_LOF >= 1 - epsilon
     filtered_LOF=filtered_LOF1* filtered_LOF2
     first_centroid = np.where(filtered_LOF == True)[0][0]
-    k=1
+    k=2
     centroids=X[first_centroid]
     X= np.delete(X, first_centroid, axis=0)
     while k<=K:

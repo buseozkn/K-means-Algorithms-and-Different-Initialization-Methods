@@ -5,12 +5,14 @@ import matplotlib.pyplot as plt
 import kaufman as kaufman
 import maximin as maximin
 import kmeans_plusplus as kmeans_pp
+from robin_ import ROBIN 
+from dk_means_plusplus import dk_means
 import numpy as np
 
 def llyods_kmeans(X,K):
     X=np.array((X))
     m,n=X.shape
-    centroids=kmeans_pp.kmeans_pp(X,K)
+    centroids=dk_means(X,K)
     previous_centroids=np.empty((K,n))
     
     while not np.array_equal(centroids, previous_centroids):
@@ -28,7 +30,7 @@ def llyods_kmeans(X,K):
         for row in range(m):
             centroids[centroid_assignments[row],:]+=X[row,:]
             numbers_in_clusters[centroid_assignments[row],:]+=1
-        centroids=centroids/numbers_in_clusters
+        centroids=centroids/(numbers_in_clusters+1e-10)
     ssd=0
     for data in range(m):
         ssd+=np.linalg.norm(X[data]-centroids[centroid_assignments[data]])** 2
