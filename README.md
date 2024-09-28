@@ -1,2 +1,2 @@
-# K-means-Algorithms-and-Different-Initialization-Methods
+# K-means Algorithms and Initialization Methods
 Reffering to *An Empirical Comparison Between Stochastic and Deterministic Centroid Initialization for K-means Variations?* (Vouros et al., 2021), my aim is to reimplement different K-means algorithms including Lloyd's K-means, Hartigan Wong's K-means, and K-medians and initialization methods including Kaufman, K-means++, Maximin, Random, ROBIN, and DK-Means++ to compare the performances of stochastic and deterministic initialization algorithms applied with different K-means algorithms in the search of addressing existance and convergence problems in clustering.
